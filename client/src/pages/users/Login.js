@@ -5,7 +5,6 @@ import './login.css';
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { userInfo, userLogin } from '../../services/userService';
-import { Alert } from '@mui/material';
 
 let emptyForm = { 
     username: '',
@@ -62,7 +61,6 @@ function Login({ setUser }) {
             </div>
             <button className="btn mt-3">Login</button>
         </form>
-        <Alert severity="success">This is a success alert — check it out!</Alert>
         <div class="text-center fs-6 bottom-div">
             <Link to="/register">
                 Sign up
