@@ -12,7 +12,7 @@ let emptyForm = {
     password: ''
 }
 
-function Login({ setUser }) {
+function Login() {
 
     const navigate = useNavigate()
     let [form, setForm] = useState(emptyForm)
@@ -36,8 +36,6 @@ function Login({ setUser }) {
             return
         }
         localStorage.setItem("token", data.token)
-
-        const user = await userInfo()
 
         navigate('/home')
         window.location.replace('./home');
