@@ -5,10 +5,10 @@ export async function userLogin(user) {
     try {
         console.log(user)
         const response = await axios.post('/auth/login', user)
-        return response.data.token
+        return response.data
     } catch(err) {
         console.log(err)
-        alert(err.response?.data?.error)
+        return err.response.data
     }
 }
 

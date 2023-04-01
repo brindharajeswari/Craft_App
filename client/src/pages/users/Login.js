@@ -5,6 +5,7 @@ import './login.css';
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { userInfo, userLogin } from '../../services/userService';
+import { Alert } from '@mui/material';
 
 let emptyForm = { 
     username: '',
@@ -14,8 +15,10 @@ let emptyForm = {
 function Login({ setUser }) {
 
     const navigate = useNavigate()
-
     let [form, setForm] = useState(emptyForm)
+
+    const [alert, setAlert] = useState(false);
+    const [alertContent, setAlertContent] = useState('');
 
     const handleChange = (e) => {
         setForm({ ...form, [e.target.name]: e.target.value })
@@ -24,14 +27,15 @@ function Login({ setUser }) {
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        const token = await userLogin(form)
+        const data = await userLogin(form)
 
-        if (!token) {
+        if (!data.token) {
             setForm(emptyForm)
+            setAlertContent(data.error);
+            setAlert(true);  
             return
         }
-
-        localStorage.setItem("token", token)
+        localStorage.setItem("token", data.token)
 
         const user = await userInfo()
 
@@ -59,8 +63,10 @@ function Login({ setUser }) {
                 <span className=  "fas fa-key"></span>
                 <input  autoComplete='off'  onChange={handleChange} type="password" name="password" id="pwd" placeholder="Password"/>
             </div>
+            {alert ? <Alert  className='alert-bg' severity="error">{alertContent}</Alert> : <></> }
             <button className="btn mt-3">Login</button>
         </form>
+
         <div class="text-center fs-6 bottom-div">
             <Link to="/register">
                 Sign up

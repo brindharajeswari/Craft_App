@@ -45,24 +45,24 @@ function Register({ setUser }) {
         <div className=  "logo">
             <img src={logo} alt={logo}/>
         </div>
-        <form autoComplete="off"  onSubmit={handleSubmit}>
+        <form autoComplete="none"   onSubmit={handleSubmit}>
              <div className=  "form-field d-flex align-items-center">
                 <span className=  "far fa-address-card"></span>
-                <input autoComplete="off"  onChange={handleChange} type="text" name="name" id="name" placeholder="Name"/>
+                <input autoComplete='off'  onChange={handleChange} type="text" name="name" id="name" placeholder="Name"/>
             </div>
 
             <div className=  "form-field d-flex align-items-center">
                 <span className=  "far fa-envelope"></span>
-                <input autoComplete="off"  onChange={handleChange} type="text" name="email" id="emailid" placeholder="Email"/>
+                <input autoComplete='off'  onChange={handleChange} type="text" name="email" id="emailid" placeholder="Email"/>
             </div>
 
             <div className=  "form-field d-flex align-items-center">
                 <span className=  "far  fa-user"></span>
-                <input autoComplete="off"  onChange={handleChange} type="text" name="username" id="userName" placeholder="Username"/>
+                <input autoComplete='off'  onChange={handleChange} type="text" name="username" id="userName" placeholder="Username"/>
             </div>
             <div className=  "form-field d-flex align-items-center">
                 <span className=  "fas fa-key"></span>
-                <input autoComplete="off"  onChange={handleChange} type="password" name="password" id="pwd" placeholder="Password"/>
+                <input autoComplete='off'  onChange={handleChange} type="password" name="password" id="pwd" placeholder="Password"/>
             </div>
             <button className=  "btn mt-3">Register</button>
         </form>

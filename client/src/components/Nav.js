@@ -1,70 +1,58 @@
-import { Link } from 'react-router-dom';
+import { useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import logo from '../images/logo.png';
 
-function Nav({ user, setUser}) {
+function Navbar() {
+  
+    const navigate = useNavigate()
+
     const logout = () => {
         localStorage.removeItem("token")
-        setUser({})
-      };
-    return (
-        <div>
-            <ul className="user-auth">
-            {user ? 
-                 <>
-                  <li style={{ color: "black" }}>Welcome {user}!</li>
-          <li className="posts-nav">
-            <Link to="/posts">Posts</Link>
-          </li>
-          <li onClick={logout}>
-            <Link to="/login">Logout</Link>
-          </li>
-        </>
-       : 
-        <>
 
-            {/* <nav className="navbar" style="background-color: #e3f2fd;"> */}
-            <nav className="navbar navbar-expand-lg bg-body-tertiary">
-                <div className="container-fluid">
-                    {/* <a className="navbar-brand" href="#">Navbar</a> */}
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
-                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                            {/* <li className="nav-item">
-                                <Link className="nav-link active" aria-current="page" to="/home">Home</Link>
-                            </li> */}
-                            <li className="nav-item">
-                                <Link className="nav-link" to="/about">About</Link>
-                            </li>
+        navigate('/login')
+        window.location.replace('./login');
+    };
 
-                            <li className="nav-item dropdown">
-                                <Link className="nav-link dropdown-toggle" to="/crafts" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Crafts
-                                </Link>
-                                <ul className="dropdown-menu">
-                                    <li><Link className="dropdown-item" to="/christmascrafts">Christmas Crafts</Link></li>
-                                    <li><Link className="dropdown-item" to="/valentinesdaycrafts">Valentines' Day crafts</Link></li>
-                                    {/* <li><hr className="dropdown-divider"/></li> */}
-                                    <li><Link className="dropdown-item" to="/wintercrafts">Winter Crafts</Link></li>
-                                </ul>
+    useEffect(() => {
+        sidebar();
+    });
 
-                            </li>
+    function sidebar() {
+        let open = document.querySelector('.navbar--icon');
+        let menu = document.querySelector('.nav--open');
+        let close = document.querySelector('.nav--open-icon');
 
-                        </ul>
+        open.addEventListener('click', function () {
+            menu.classList.toggle('close');
+        });
 
-                        <form className="d-flex" role="search">
-                            <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                            <button className="btn btn-outline-success" type="submit">Search</button>
-                        </form>
-                    </div>
-                </div>
-            </nav>
-            </>
-            }
-            </ul>
+
+        close.addEventListener('click', function () {
+            menu.classList.toggle('close');
+        })
+
+    }
+
+  return (
+    <div className="home-logo">
+    <div className="navbar--container sticky">
+        <div className="navbar--title"><h4>navigation</h4></div>
+        <div className="navbar--icon"><i className="fas fa-bars"></i></div>
+    </div>
+    <div className="nav--open close sticky">
+        <div className="nav--open-icon"><i className="fas fa-times"></i></div>
+        <div className="nav--open-title">explore</div>
+        <div className="nav--open-menu">
+            <Link to="/craft">crafts</Link>
+            <a href="">about</a>
+            <Link to="/contact">contact us</Link>
+            <a href="" onClick={logout}>logout</a>
         </div>
-       
-    )
+    </div>
+    
+        <img className='logo-img'  src={logo} alt={logo} />
+    </div>
+);
 }
 
-export default Nav;
+export default Navbar;

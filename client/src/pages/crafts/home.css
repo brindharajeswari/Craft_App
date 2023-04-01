@@ -9,7 +9,7 @@ div.nav--open-menu a {
   color: rgb(114, 212, 251);
 }
 div.nav--open-menu a:hover {
-  background: #5c80f8;
+  background: #03A9F4;
   color: rgb(255, 255, 255);
 }
 
@@ -63,10 +63,10 @@ div.nav--open-menu a:hover {
 }
 .nav--open-icon i {
   font-size: 1.8em;
-  color: #92BFB1;
+  color: rgb(114, 212, 251);
 }
 .nav--open-icon i:hover {
-  color: #333333;
+  color: #03A9F4;
   cursor: pointer;
 }
 
@@ -126,8 +126,8 @@ h1 {
 }
 h1 span {
   font-style: italic;
-  text-decoration: underline;
-  color: #72ac9a;
+  color: #03A9F4;
+
 }
 
 .light {
@@ -140,5 +140,13 @@ h1 span {
 
 .home-logo{
     width: 5px;
-    height:5px;
+}
+
+.logo-img {
+  position: absolute;
+  top: 8px;
+  height: 158px;
+  right: 0px;
+  -webkit-filter: drop-shadow(2px 2px 2px #666666);
+  filter: drop-shadow(2px 2px 2px #666666);
 }

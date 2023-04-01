@@ -8,6 +8,8 @@ import './App.css';
 import Register from './pages/users/Register';
 import Login from './pages/users/Login';
 import Home from './pages/crafts/Home';
+import Craft from './pages/crafts/Craft';
+import Contact from './pages/crafts/Contact';
 
 function App() {
   const [user, setUser] = useState({})
@@ -37,13 +39,16 @@ function App() {
   }, [])
 
   let loggedIn = user.username
+  let userFullName = user.name
 
   return (
     <div className='App'>
       <Routes>
         {loggedIn ?
           <>
-            <Route path='/home/' element={<Home />} />
+            <Route path='/home/' element={<Home  user={userFullName} />} />
+            <Route path='/craft/' element={<Craft />} />
+            <Route path='/contact/' element={<Contact />} />
             {!isLoading && <Route path='/home/' element={<Navigate to='/home' />} />}
           </>
           :
