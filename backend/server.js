@@ -17,10 +17,7 @@ const userRoutes = require('./routes/userRoutes')
 
 const { authorize } = require('./middleware/authMiddleware')
 
-// const { createEngine } = require('jsx-view-engine')
-// const methodOverride = require('method-override')
-// app.set('view engine', 'jsx')
-// app.engine('jsx', createEngine())
+
 
 
 app.use(express.json())

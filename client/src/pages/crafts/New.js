@@ -1,0 +1,1 @@
+<Nav user={loggedIn} setUser={setUser} />
