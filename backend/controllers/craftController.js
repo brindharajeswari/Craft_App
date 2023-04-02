@@ -2,9 +2,7 @@ const Crafts = require('../models/craftModel')
 const Comments = require('../models/commentModel')
 
 module.exports.seed = async (req, res) => {
-    // await Posts.deleteMany({})
-    // await Posts.create(posts)
-    res.redirect('/crafts')
+    res.redirect('/craft')
 }
 
 module.exports.index = async (req, res) => {

@@ -14,6 +14,7 @@ connectDB();
 
 const authRoutes = require('./routes/authRoutes')
 const userRoutes = require('./routes/userRoutes')
+const craftRoutes = require('./routes/craftRoutes')
 
 const { authorize } = require('./middleware/authMiddleware')
 
@@ -25,6 +26,7 @@ app.use(cors())
 
 app.use('/auth', authRoutes)
 app.use('/users', authorize, userRoutes)
+app.use('/craft', authorize, craftRoutes)
 
 
 
