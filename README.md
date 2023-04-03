@@ -2,5 +2,5 @@
 ![logo](./client/src/images/logo.png)
 
 Login page
-craft page - create, update
-crafts 
+craft page - create create
+crafts -

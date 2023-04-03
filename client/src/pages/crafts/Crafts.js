@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 import './home.css';
 import './craft.css';
@@ -24,25 +25,27 @@ function Crafts() {
     useEffect(() => {
 
         getCraft()
-    }, []); 
+    }, []);
 
     return (
         <>
             <Navbar />
             <section>
                 <div className="box">
-                        {crafts.map(craft =>
-                            <div id="card-container" key={craft}>
-                            <div id="card">
-                                <div className="front face">
-                                    <img className='craft' src={craft.img} />
+                    {crafts.map(craft =>
+                        <div id="card-container" >
+                            <Link to={`/craft/${craft.id}`} key={craft}>
+                                <div id="card">
+                                    <div className="front face">
+                                        <img className='craft' src={craft.img} />
+                                    </div>
+                                    <div className="back face">
+                                        <h1 className='craft'>{craft.title}</h1>
+                                        <p className="artist craft">{craft.category}</p>
+                                        <p className="date craft">{craft.description}</p>
+                                    </div>
                                 </div>
-                                <div className="back face">
-                                    <h1 className='craft'>{craft.title}</h1>
-                                    <p className="artist craft">{craft.category}</p>
-                                    <p className="date craft">{craft.description}</p>
-                                </div>
-                            </div>
+                            </Link>
                         </div>
                     )}
                 </div>
