@@ -1,0 +1,48 @@
+
+.manage-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.manage-table {
+  width: 800px;
+  border-collapse: collapse;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+table.manage-table th,table.manage-table td {
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+table.manage-table th {
+  text-align: left;
+}
+table.manage-table thead th {
+  background-color: rgb(5 185 255);
+}
+table.manage-table tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+table.manage-table tbody td {
+  position: relative;
+}
+table.manage-table tbody td:hover:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -9999px;
+  color: rgb(5 185 255);
+  bottom: -9999px;
+  background-color: rgba(255, 255, 255, 0.2);
+  z-index: -1
+}
+tr.manange-row th,td{
+    font-family: "Oswald", sans-serif;
+    letter-spacing: 0.34em;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    color: black;
+}
