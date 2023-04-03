@@ -11,6 +11,7 @@ import Home from './pages/crafts/Home';
 import Craft from './pages/crafts/Craft';
 import Contact from './pages/crafts/Contact';
 import Create from './pages/crafts/Create';
+import Manage from './pages/crafts/Manage';
 
 function App() {
   const [user, setUser] = useState({})
@@ -47,16 +48,17 @@ function App() {
       <Routes>
         {loggedIn ?
           <>
-            <Route path='/home/' element={<Home  user={userFullName} />} />
-            <Route path='/craft/' element={<Craft />} />
-            <Route path='/contact/' element={<Contact />} />
-            <Route path='/create/' element={<Create />} />
-            {!isLoading && <Route path='/home/' element={<Navigate to='/home' />} />}
+            <Route path='/home' element={<Home  user={userFullName} />} />
+            <Route path='/craft' element={<Craft />} />
+            <Route path='/contact' element={<Contact />} />
+            <Route path='/create' element={<Create />} />
+            <Route path='/manage' element={<Manage />} />
+            {!isLoading && <Route path='/home' element={<Navigate to='/home' />} />}
           </>
           :
           <>
-            <Route path='/login/' element={<Login />} />
-            <Route path='/register/' element={<Register />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/register' element={<Register />} />
             {!isLoading && <Route path='/' element={<Navigate to='/login' />} />}
           </>
         }

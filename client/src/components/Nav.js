@@ -15,7 +15,7 @@ function Navbar() {
 
     useEffect(() => {
         sidebar();
-    });
+    },[]);
 
     function sidebar() {
         let open = document.querySelector('.navbar--icon');

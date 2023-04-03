@@ -1,12 +1,12 @@
 @import url("https://fonts.googleapis.com/css?family=Abril+Fatface|Oswald:200,400|Playfair+Display:400,400i");
 body {
   margin: 0;
-  background: rgb(210, 241, 253);
+  background: rgb(155 227 255);
 }
 
 div.nav--open-menu a {
   text-decoration: none;
-  color: rgb(114, 212, 251);
+  color: rgb(5 185 255);
 }
 div.nav--open-menu a:hover {
   background: #03A9F4;
@@ -63,7 +63,7 @@ div.nav--open-menu a:hover {
 }
 .nav--open-icon i {
   font-size: 1.8em;
-  color: rgb(114, 212, 251);
+  color: rgb(5 185 255);
 }
 .nav--open-icon i:hover {
   color: #03A9F4;
@@ -149,4 +149,8 @@ h1 span {
   right: 0px;
   -webkit-filter: drop-shadow(2px 2px 2px #666666);
   filter: drop-shadow(2px 2px 2px #666666);
+}
+
+a.underline {
+  color: #03A9F4;
 }

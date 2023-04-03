@@ -10,7 +10,7 @@ function Contact() {
         <>
             <Navbar></Navbar>
             <section>
-                <h1>you can <br/>follow me on <br/><a className="underline" target="_blank" href="https://instagram.com/hercodehaus">instagram</a><br/> or <a className="underline" target="_blank" href="https://twitter.com/juliepark">twitter.</a></h1>
+                <h1>you can <br/>follow me on <br/><a className="underline" target="_blank" href="https://www.instagram.com/craftswithtoddler3/">instagram</a><br/> or <a className="underline" target="_blank" href="https://twitter.com/craftswtoddler">twitter.</a></h1>
             </section>
         </>
     );

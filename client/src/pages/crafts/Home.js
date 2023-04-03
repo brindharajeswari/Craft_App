@@ -7,6 +7,7 @@ import Navbar from '../../components/Nav';
 function Home({ user }) {
 
 
+    
     return (
         <>
             <Navbar></Navbar>

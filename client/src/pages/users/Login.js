@@ -42,9 +42,6 @@ function Login() {
 
     }
 
-    function sayHello() {
-        alert('You clicked me!');
-      }
       
     return ( 
         <>
