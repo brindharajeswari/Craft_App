@@ -4,6 +4,7 @@ export async function getAllCrafts() {
     const axios = customAxiosWithAuth()
     try {
         const response = await axios.get('/craft')
+        console.log(response)
         return response.data
     } catch(err) {
         console.log(err.message)
@@ -12,7 +13,7 @@ export async function getAllCrafts() {
 }
 
 export async function getCraft(id) {
-    const axios = customAxios()
+    const axios = customAxiosWithAuth()
     try {
         const response = await axios.get(`/craft/${id}`)
         return response.data
@@ -43,11 +44,12 @@ export async function createCraft(craft) {
     }
 }
 
-export async function updateCraft(id, post) {
+export async function updateCraft(id, craft) {
     const axios = customAxiosWithAuth()
     try {
-        await axios.put(`/craft/${id}`, post)
+        await axios.put(`/craft/${id}`, craft)
     } catch(err) {
         console.log(err.message)
+        return err
     }
 }

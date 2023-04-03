@@ -13,10 +13,10 @@ router.get('/seed', craftControl.seed)
 router.get('/', craftControl.index)
 
 // delete
-router.delete('/:id', authorize, confirmUserAccess, craftControl.delete)
+router.delete('/:id', authorize, craftControl.delete)
 
 // update
-router.put('/:id', authorize, confirmUserAccess, craftControl.update)
+router.put('/:id', authorize, craftControl.update)
 
 // create
 router.post('/', authorize, craftControl.create)

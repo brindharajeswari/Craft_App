@@ -8,11 +8,10 @@ import './App.css';
 import Register from './pages/users/Register';
 import Login from './pages/users/Login';
 import Home from './pages/crafts/Home';
-import Craft from './pages/crafts/Craft';
 import Contact from './pages/crafts/Contact';
-import Create from './pages/crafts/Create';
 import Manage from './pages/crafts/Manage';
-import Craftdetails from './pages/crafts/Craftdetails';
+import Crafts from './pages/crafts/Crafts';
+import Craft from './pages/crafts/Craft';
 
 function App() {
   const [user, setUser] = useState({})
@@ -50,11 +49,12 @@ function App() {
         {loggedIn ?
           <>
             <Route path='/home' element={<Home  user={userFullName} />} />
-            <Route path='/craft' element={<Craft />} />
+            <Route path='/crafts' element={<Crafts />} />
             <Route path='/contact' element={<Contact />} />
-            <Route path='/create' element={<Create />} />
             <Route path='/manage' element={<Manage />} />
-            <Route path='/craft/id' element={<Craftdetails />} />        
+            <Route path='/craft' element={<Craft />} />        
+            <Route path='/craft/:id' element={<Craft/>} />
+
             {!isLoading && <Route path='/home' element={<Navigate to='/home' />} />}
           </>
           :

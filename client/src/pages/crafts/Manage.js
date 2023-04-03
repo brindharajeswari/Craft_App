@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Navbar from '../../components/Nav';
-import { getAllCrafts } from '../../services/craftService';
+import { deleteCraft, getAllCrafts } from '../../services/craftService';
 import './manage.css';
 
 function Manage() {
 
     const [crafts, setCraft] = useState([]);
+    const navigate = useNavigate()
 
     const getCraft = async () => {
 
@@ -25,16 +26,21 @@ function Manage() {
         getCraft()
     }, []); 
 
+    async function handleDeleteCraft(id) {
+        await deleteCraft(id)
+        navigate('/manage')
+    }
+
 
     return (
         <>
             <Navbar/>
-            <div class="manage-container">
+            <div className="manage-container">
             <div className='craft-button'>
-            <Link to="/create"><button className="btn mt-3">New Craft</button></Link>
+            <Link to="/craft"><button className="btn mt-3">New Craft</button></Link>
            </div>
 
-            <table class="manage-table">
+            <table className="manage-table">
                 <thead>
                     <tr className='manage-row'>
                         <th>Title</th>
@@ -44,10 +50,12 @@ function Manage() {
                 </thead>
                 <tbody>
                 {crafts.map(craft =>
-                                <tr className='manage-row'>
+                                <tr className='manage-row' key={craft._id}>
                                     <td>{craft.title}</td>
                                     <td>{craft.category}</td>
-                                    <td>Edit | Delete</td>
+                                    <td>
+                                    <Link className='craft-edit' to={"/craft/" + craft._id}>Edit</Link> | <a href='' onClick={() => handleDeleteCraft(craft._id)} className='craft-edit'>Delete</a>
+                                    </td>
                                 </tr>
                     )}
                 </tbody>

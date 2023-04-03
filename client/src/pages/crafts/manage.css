@@ -63,3 +63,8 @@ div.craft-button {
 .craft-button .btn:hover {
     background-color: #039BE5;
 }
+
+.craft-edit {
+  color: white;
+  text-decoration: unset;
+}

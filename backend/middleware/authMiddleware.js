@@ -42,6 +42,7 @@ async function confirmUserAccess(req, res, next) {
     try {
         let document;
         if (req.baseUrl.includes('craft')) { 
+            console.log(req.user)
             document = await Craft.findOne({ _id: req.params.id, user: req.user })
         } else {
             document = await Comment.findOne({ _id: req.params.id, user: req.user })

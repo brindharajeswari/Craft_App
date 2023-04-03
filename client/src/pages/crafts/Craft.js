@@ -1,56 +1,92 @@
 import React, { useState, useEffect } from 'react';
 
 import './home.css';
-import './craft.css';
+import './../users/login.css';
 import Navbar from '../../components/Nav';
-import { getAllCrafts } from '../../services/craftService';
+import { createCraft, getCraft, updateCraft } from '../../services/craftService';
+import { Link, useNavigate, useParams } from 'react-router-dom';
+
+let emptyForm = { 
+    title: '',
+    category: '',
+    description: '',
+    img: '',
+    link: ''
+}
 
 function Craft() {
+    
+    
+    let [form, setForm] = useState([emptyForm])
+    let [craft, setCraft] = useState({})
 
-    const [crafts, setCraft] = useState([]);
+    const navigate = useNavigate()
+    const params = useParams()
 
-    const getCraft = async () => {
-
-        try {
-            const data = await getAllCrafts()
-            console.log(data)
-            setCraft(data)
-        } catch (error) {
-            console.log(error)
-        }
+    const handleChange = (e) => {
+        setForm({ ...form, [e.target.name]: e.target.value })
     }
 
+    async function handleSubmit(e) {
+        e.preventDefault()
+        if(!craft) {
+            console.log(form)
+            await updateCraft(craft._id, form)
+    
+        } else {
+           await createCraft(form)
+        }
+
+        navigate('/manage')
+    }
 
     useEffect(() => {
-
-        getCraft()
-    }, []); 
+        console.log(!craft)
+        if(params.id) {
+            getCraft(params.id).then(data => {
+                form[0] = data;
+                setCraft(data)
+    
+            })
+    
+        }
+    }, [params.id])
 
     return (
         <>
-            <Navbar />
-            <section>
-                <div className="box">
-                        {crafts.map(craft =>
-                            <div id="card-container" key={craft}>
-                            <div id="card">
-                                <div className="front face">
-                                    <img className='craft' src={craft.img} />
-                                </div>
-                                <div className="back face">
-                                    <h1 className='craft'>{craft.title}</h1>
-                                    <p className="artist craft">{craft.category}</p>
-                                    <p className="date craft">{craft.description}</p>
-                                </div>
-                            </div>
-                        </div>
-                    )}
+            <Navbar></Navbar>
+            <div className="wrapper create">
+                <div className="text-center mt-4 name create-heading">
+                {!craft ? "Edit" : "New"} Craft
                 </div>
 
-                <footer>
-                    <p className='craft'>made by <a href="https://codepen.io/juliepark"> brindha</a> ♡</p>
-                </footer>
-            </section>
+                <form autoComplete="none" onSubmit={handleSubmit} >
+                    <div className=  "form-field d-flex align-items-center">
+                        <input defaultValue={craft?.title} onChange={handleChange}  autoComplete='off'  type="text" name="title" id="title" placeholder="Craft title"/>
+                    </div>
+                    <div className=  "form-field d-flex align-items-center">
+                        <input defaultValue={craft?.category}  onChange={handleChange}  autoComplete='off'  type="text" name="category" id="category" placeholder="Craft category"/>
+                    </div>
+                    <div className=  "form-field d-flex align-items-center">
+                        <textarea defaultValue={craft?.description}  onChange={handleChange}  autoComplete='off'  type="" name="description" id="description" placeholder="Craft description"/>
+                    </div>
+                    <div className=  "form-field d-flex align-items-center">
+                        <input defaultValue={craft?.img}  onChange={handleChange}   autoComplete='off'  type="text" name="img" id="img" placeholder="Craft image URL"/>
+                    </div>
+                    <div className=  "form-field d-flex align-items-center">
+                        <input defaultValue={craft?.link}  onChange={handleChange}  autoComplete='off'  type="text" name="link" id="link" placeholder="Craft Youtube URL"/>
+                    </div>
+
+                    
+                    <button className="btn mt-3">{!craft ? "Update" : "Create"}</button>
+                </form>
+                <div className="text-center fs-6 bottom-div">
+                    <Link to="/manage">
+                        Back
+                    </Link>
+                </div>
+
+            </div>
         </>
     );
 }

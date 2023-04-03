@@ -43,12 +43,12 @@ function Navbar() {
         <div className="nav--open-icon"><i className="fas fa-times"></i></div>
         <div className="nav--open-title">explore</div>
         <div className="nav--open-menu">
-            <Link to="/craft">crafts</Link>
-            <a href="">about</a>
+            <Link to="/crafts">crafts</Link>
+            <Link to="/manage">manage</Link>
             <Link to="/contact">contact us</Link>
             <a href="" onClick={logout}>logout</a>
         </div>
-    </div>
+    </div>x
     
         <img className='logo-img'  src={logo} alt={logo} />
     </div>
