@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Navbar from '../../components/Nav';
 import { getAllCrafts } from '../../services/craftService';
 import './manage.css';
@@ -29,6 +30,10 @@ function Manage() {
         <>
             <Navbar/>
             <div class="manage-container">
+            <div className='craft-button'>
+            <Link to="/create"><button className="btn mt-3">New Craft</button></Link>
+           </div>
+
             <table class="manage-table">
                 <thead>
                     <tr className='manage-row'>

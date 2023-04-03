@@ -15,6 +15,7 @@ div.create{
 div.create-heading{
     margin-bottom: 14px;
     color: #039BE5 !important;
+    font-family: "Abril Fatface", serif;
 }
 
 .logo {
@@ -69,6 +70,7 @@ div.create-heading{
     box-shadow: 3px 3px 3px #b1b1b1,
         -3px -3px 3px #fff;
     letter-spacing: 1.3px;
+    font-family: "Abril Fatface", serif;
 }
 
 .wrapper .btn:hover {
@@ -79,6 +81,7 @@ div.create-heading{
     text-decoration: none;
     font-size: 0.8rem;
     color: #03A9F4;
+    font-family: "Abril Fatface", serif;
 }
 
 .wrapper a:hover {

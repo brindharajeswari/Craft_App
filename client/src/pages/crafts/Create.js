@@ -4,7 +4,7 @@ import './home.css';
 import './../users/login.css';
 import Navbar from '../../components/Nav';
 import { createCraft } from '../../services/craftService';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { Alert } from '@mui/material';
 
 let emptyForm = { 
@@ -35,7 +35,7 @@ function Create() {
             setAlert(true);  
             return
         }
-        navigate('/craft')
+        navigate('/manage')
     }
 
 
@@ -66,6 +66,11 @@ function Create() {
                     {alert ? <Alert  className='alert-bg' severity="error">{alertContent}</Alert> : <></> }
                     <button className="btn mt-3">Create</button>
                 </form>
+                <div class="text-center fs-6 bottom-div">
+                    <Link to="/manage">
+                        Back
+                    </Link>
+                </div>
 
             </div>
         </>

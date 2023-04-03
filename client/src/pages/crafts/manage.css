@@ -1,7 +1,7 @@
 
 .manage-container {
   position: absolute;
-  top: 50%;
+  top: 41%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -10,34 +10,27 @@
   border-collapse: collapse;
   overflow: hidden;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
 }
 table.manage-table th,table.manage-table td {
   padding: 15px;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgb(10 169 225);
   color: #fff;
 }
 table.manage-table th {
   text-align: left;
 }
 table.manage-table thead th {
-  background-color: rgb(5 185 255);
+  background-color: rgb(52 185 237);
+  font-family: "Abril Fatface", serif;
+  letter-spacing: 0.34em;
 }
 table.manage-table tbody tr:hover {
   background-color: rgba(255, 255, 255, 0.3);
 }
 table.manage-table tbody td {
   position: relative;
-}
-table.manage-table tbody td:hover:before {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: -9999px;
-  color: rgb(5 185 255);
-  bottom: -9999px;
-  background-color: rgba(255, 255, 255, 0.2);
-  z-index: -1
+  font-weight: bolder;
 }
 tr.manange-row th,td{
     font-family: "Oswald", sans-serif;
@@ -45,4 +38,28 @@ tr.manange-row th,td{
     text-transform: uppercase;
     font-size: 0.9em;
     color: black;
+}
+
+.craft-button .btn {
+    font-family: "Abril Fatface", serif;
+    letter-spacing: 0.2em !important; 
+    box-shadow: none;
+    width: 22%;
+    height: 40px;
+    background-color: #03A9F4;
+    color: #fff;
+    border-radius: 25px;
+    box-shadow: 3px 3px 3px #b1b1b1,
+        -3px -3px 3px #fff;
+    letter-spacing: 1.3px;
+    position: absolute;
+    right: 0px;
+}
+
+div.craft-button {
+    margin-bottom: 73px;
+}
+
+.craft-button .btn:hover {
+    background-color: #039BE5;
 }
