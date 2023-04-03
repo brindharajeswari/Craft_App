@@ -12,6 +12,8 @@ import Contact from './pages/crafts/Contact';
 import Manage from './pages/crafts/Manage';
 import Crafts from './pages/crafts/Crafts';
 import Craft from './pages/crafts/Craft';
+import Create from './pages/crafts/Create';
+import Update from './pages/crafts/Update';
 
 function App() {
   const [user, setUser] = useState({})
@@ -52,8 +54,8 @@ function App() {
             <Route path='/crafts' element={<Crafts />} />
             <Route path='/contact' element={<Contact />} />
             <Route path='/manage' element={<Manage />} />
-            <Route path='/craft' element={<Craft />} />        
-            <Route path='/craft/:id' element={<Craft/>} />
+            <Route path='/create' element={<Create />} />        
+            <Route path='/update/:id' element={<Update/>} />
 
             {!isLoading && <Route path='/home' element={<Navigate to='/home' />} />}
           </>

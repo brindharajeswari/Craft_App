@@ -37,7 +37,7 @@ function Manage() {
             <Navbar/>
             <div className="manage-container">
             <div className='craft-button'>
-            <Link to="/craft"><button className="btn mt-3">New Craft</button></Link>
+            <Link to="/create"><button className="btn mt-3">New Craft</button></Link>
            </div>
 
             <table className="manage-table">
@@ -54,7 +54,7 @@ function Manage() {
                                     <td>{craft.title}</td>
                                     <td>{craft.category}</td>
                                     <td>
-                                    <Link className='craft-edit' to={"/craft/" + craft._id}>Edit</Link> | <a href='' onClick={() => handleDeleteCraft(craft._id)} className='craft-edit'>Delete</a>
+                                    <Link className='craft-edit' to={"/update/" + craft._id}>Edit</Link> | <a href='' onClick={() => handleDeleteCraft(craft._id)} className='craft-edit'>Delete</a>
                                     </td>
                                 </tr>
                     )}

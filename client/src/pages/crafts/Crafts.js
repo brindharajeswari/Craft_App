@@ -48,7 +48,7 @@ function Crafts() {
                 </div>
 
                 <footer>
-                    <p className='craft'>made by <a href="https://codepen.io/juliepark"> brindha</a> ♡</p>
+                    <p className='craft'>made by <a href="https://www.youtube.com/@CraftswithToddler"> Crafts with Toddler</a> ♡</p>
                 </footer>
             </section>
         </>

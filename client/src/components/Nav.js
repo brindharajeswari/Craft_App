@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import logo from '../images/logo.png';
 
 function Navbar() {
-  
+
     const navigate = useNavigate()
 
     const logout = () => {
@@ -15,7 +15,7 @@ function Navbar() {
 
     useEffect(() => {
         sidebar();
-    },[]);
+    }, []);
 
     function sidebar() {
         let open = document.querySelector('.navbar--icon');
@@ -33,26 +33,26 @@ function Navbar() {
 
     }
 
-  return (
-    <div className="home-logo">
-    <div className="navbar--container sticky">
-        <div className="navbar--title"><h4>navigation</h4></div>
-        <div className="navbar--icon"><i className="fas fa-bars"></i></div>
-    </div>
-    <div className="nav--open close sticky">
-        <div className="nav--open-icon"><i className="fas fa-times"></i></div>
-        <div className="nav--open-title">explore</div>
-        <div className="nav--open-menu">
-            <Link to="/crafts">crafts</Link>
-            <Link to="/manage">manage</Link>
-            <Link to="/contact">contact us</Link>
-            <a href="" onClick={logout}>logout</a>
+    return (
+        <div className="home-logo">
+            <div className="navbar--container sticky">
+                <div className="navbar--title"><h4>navigation</h4></div>
+                <div className="navbar--icon"><i className="fas fa-bars"></i></div>
+            </div>
+            <div className="nav--open close sticky">
+                <div className="nav--open-icon"><i className="fas fa-times"></i></div>
+                <div className="nav--open-title">explore</div>
+                <div className="nav--open-menu">
+                    <Link to="/crafts">crafts</Link>
+                    <Link to="/manage">manage</Link>
+                    <Link to="/contact">contact us</Link>
+                    <a href="" onClick={logout}>logout</a>
+                </div>
+            </div>
+
+            <img className='logo-img' src={logo} alt={logo} />
         </div>
-    </div>x
-    
-        <img className='logo-img'  src={logo} alt={logo} />
-    </div>
-);
+    );
 }
 
 export default Navbar;
