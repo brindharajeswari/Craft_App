@@ -4,7 +4,8 @@ import './home.css';
 import './../users/login.css';
 import Navbar from '../../components/Nav';
 import { createCraft } from '../../services/craftService';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { Alert } from '@mui/material';
 
 let emptyForm = { 
     title: '',
@@ -15,10 +16,10 @@ let emptyForm = {
 }
 
 function Create() {
-    
-    
-    let [form, setForm] = useState([emptyForm])
 
+    const [alert, setAlert] = useState(false);
+    const [alertContent, setAlertContent] = useState('');
+    let [form, setForm] = useState(emptyForm)
     const navigate = useNavigate()
 
     const handleChange = (e) => {
@@ -27,21 +28,28 @@ function Create() {
 
     async function handleSubmit(e) {
         e.preventDefault()
-        await createCraft(form)
+        const error = await createCraft(form)
+
+        if (error.message !== undefined ) {
+            setAlertContent(error.message);
+            setAlert(true);  
+            return
+        }
         navigate('/manage')
     }
+
 
     return (
         <>
             <Navbar></Navbar>
             <div className="wrapper create">
                 <div className="text-center mt-4 name create-heading">
-                New Craft
+                   New Craft
                 </div>
 
                 <form autoComplete="none" onSubmit={handleSubmit} >
                     <div className=  "form-field d-flex align-items-center">
-                        <input onChange={handleChange}  autoComplete='off'  type="text" name="title" id="title" placeholder="Craft title"/>
+                        <input  onChange={handleChange}  autoComplete='off'  type="text" name="title" id="title" placeholder="Craft title"/>
                     </div>
                     <div className=  "form-field d-flex align-items-center">
                         <input  onChange={handleChange}  autoComplete='off'  type="text" name="category" id="category" placeholder="Craft category"/>
@@ -55,11 +63,10 @@ function Create() {
                     <div className=  "form-field d-flex align-items-center">
                         <input  onChange={handleChange}  autoComplete='off'  type="text" name="link" id="link" placeholder="Craft Youtube URL"/>
                     </div>
-
-                    
+                    {alert ? <Alert  className='alert-bg' severity="error">{alertContent}</Alert> : <></> }
                     <button className="btn mt-3">Create</button>
                 </form>
-                <div className="text-center fs-6 bottom-div">
+                <div class="text-center fs-6 bottom-div">
                     <Link to="/manage">
                         Back
                     </Link>

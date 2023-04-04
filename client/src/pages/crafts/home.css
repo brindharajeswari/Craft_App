@@ -116,7 +116,7 @@ section {
   background: #72ac9a;
 }
 
-h1 {
+.home-craft h1 {
   font-family: "Abril Fatface", serif;
   margin: 0;
   line-height: 1em;
@@ -124,7 +124,7 @@ h1 {
   color: #ffffff;
   font-size: 3.5em;
 }
-h1 span {
+.home-craft h1 span {
   font-style: italic;
   color: #03A9F4;
 
@@ -151,6 +151,21 @@ h1 span {
   filter: drop-shadow(2px 2px 2px #666666);
 }
 
-a.underline {
+.home-craft a.underline {
   color: #03A9F4;
+}
+
+.video-responsive {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+}
+
+.video-responsive iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
 }

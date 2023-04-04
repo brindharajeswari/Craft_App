@@ -34,7 +34,7 @@ function Crafts() {
                 <div className="box">
                     {crafts.map(craft =>
                         <div id="card-container" >
-                            <Link to={`/craft/${craft.id}`} key={craft}>
+                            <Link to={`/craft/${craft._id}`} key={craft._id}>
                                 <div id="card">
                                     <div className="front face">
                                         <img className='craft' src={craft.img} />
