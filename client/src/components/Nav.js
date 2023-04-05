@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import logo from '../images/logo.png';
 
-function Navbar() {
+function Navbar({userRole}) {
 
     const navigate = useNavigate()
 
@@ -45,6 +45,7 @@ function Navbar() {
                 <div className="nav--open-menu">
                     <Link to="/crafts">crafts</Link>
                     <Link to="/manage">manage</Link>
+                    {userRole == 'admin' ? <Link to="/users">users</Link> : ''}
                     <Link to="/contact">contact us</Link>
                     <a href="" onClick={logout}>logout</a>
                 </div>

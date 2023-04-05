@@ -1,4 +1,4 @@
-import { customAxios, customAxiosWithAuth } from './api'
+import { customAxiosWithAuth } from './api'
 
 export async function getAllCrafts() {
     const axios = customAxiosWithAuth()

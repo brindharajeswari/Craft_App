@@ -36,3 +36,33 @@ export async function userInfo() {
     }
 }
 
+export async function getAllUsers() {
+    const axios = customAxiosWithAuth()
+    try {
+        const response = await axios.get('/users/all')
+        console.log(response)
+        return response.data
+    } catch(err) {
+        console.log(err.message)
+        return []
+    }
+}
+
+export async function deleteUser(id) {
+    const axios = customAxiosWithAuth()
+    try {
+        await axios.delete(`/users/${id}`)
+    } catch(err) {
+        console.log(err.message)
+    }
+}
+
+export async function updateUser(id, craft) {
+    const axios = customAxiosWithAuth()
+    try {
+        await axios.put(`/user/${id}`, craft)
+    } catch(err) {
+        console.log(err.message)
+        return err
+    }
+}

@@ -12,6 +12,10 @@
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
 }
+.users .manage-table {
+  width: 915px;
+}
+
 table.manage-table th,table.manage-table td {
   padding: 15px;
   background-color: rgb(10 169 225);

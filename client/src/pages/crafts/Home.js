@@ -4,13 +4,13 @@ import React, { useState, useEffect } from 'react';
 import './home.css';
 import Navbar from '../../components/Nav';
 
-function Home({ user }) {
+function Home({ user, userRole }) {
 
 
     
     return (
         <>
-            <Navbar></Navbar>
+            <Navbar userRole={userRole}></Navbar>
             <section className='home-craft'>
                 <h1>Hello <br /><span>{user}!</span>  <br />Welcome to Crafts with Toddler</h1>
             </section>

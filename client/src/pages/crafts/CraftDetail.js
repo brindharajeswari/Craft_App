@@ -12,7 +12,7 @@ import { faHeart as  heartRegular} from '@fortawesome/free-regular-svg-icons'
 
 import './craftdetail.css';
 
-function CraftDetail(props) {
+function CraftDetail({ userRole }) {
     const [craft, setCraft] = useState([])
     const [month, setMonth] = useState([])
     const [day, setDay] = useState([])
@@ -41,7 +41,7 @@ function CraftDetail(props) {
     if (!craft) return '';
     return (
         <>
-            <Navbar />
+            <Navbar userRole={userRole}/>
             <div className="craft-card">
                 <div className="thumbnail">
                     <YoutubeEmbed  className="left" embedId={craft.link} />

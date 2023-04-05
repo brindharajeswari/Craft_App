@@ -5,7 +5,7 @@ import Navbar from '../../components/Nav';
 import { deleteCraft, getAllCrafts } from '../../services/craftService';
 import './manage.css';
 
-function Manage() {
+function Manage({ userId, userRole }) {
 
     const [crafts, setCraft] = useState([]);
     const navigate = useNavigate()
@@ -35,7 +35,7 @@ function Manage() {
 
     return (
         <>
-            <Navbar/>
+            <Navbar userRole={userRole}/>
             <div className="manage-container">
             <div className='craft-button'>
             <Link to="/create"><button className="btn mt-3">New Craft</button></Link>
@@ -55,7 +55,7 @@ function Manage() {
                                     <td>{craft.title}</td>
                                     <td>{craft.category}</td>
                                     <td>
-                                    <Link className='craft-edit' to={"/update/" + craft._id}>Edit</Link> | <a href='' onClick={() => handleDeleteCraft(craft._id)} className='craft-edit'>Delete</a>
+                                    {(userRole == 'admin') || (craft.user == userId)   ? <Link className='craft-edit' to={"/update/" + craft._id}>Edit</Link> : ''} {userRole == 'admin' ? <a href='' onClick={() => handleDeleteCraft(craft._id)} className='craft-edit'> | Delete</a> : ''}
                                     </td>
                                 </tr>
                     )}

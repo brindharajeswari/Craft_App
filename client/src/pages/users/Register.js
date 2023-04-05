@@ -42,6 +42,7 @@ function Register() {
         localStorage.setItem("token", data.token)
 
         navigate('/home')
+        window.location.replace('./home');
     }
 
     return ( 

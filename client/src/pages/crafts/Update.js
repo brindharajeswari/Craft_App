@@ -14,7 +14,7 @@ let emptyForm = {
     link: ''
 }
 
-function Update() {
+function Update({ userRole }) {
 
 
     let [form, setForm] = useState([emptyForm])
@@ -46,7 +46,7 @@ function Update() {
 
     return (
         <>
-            <Navbar></Navbar>
+            <Navbar userRole={userRole}></Navbar>
             <div className="wrapper create">
                 <div className="text-center mt-4 name create-heading">
                     Edit Craft

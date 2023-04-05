@@ -14,6 +14,7 @@ import Crafts from './pages/crafts/Crafts';
 import Create from './pages/crafts/Create';
 import Update from './pages/crafts/Update';
 import CraftDetail from './pages/crafts/CraftDetail';
+import Users from './pages/users/Users';
 
 function App() {
   const [user, setUser] = useState({})
@@ -44,19 +45,23 @@ function App() {
 
   let loggedIn = user.username
   let userFullName = user.name
+  let userId = user._id
+  let userRole = user.role
 
+console.log(user)
   return (
     <div className='App'>
       <Routes>
         {loggedIn ?
           <>
-            <Route path='/home' element={<Home  user={userFullName} />} />
-            <Route path='/crafts' element={<Crafts />} />
-            <Route path='/contact' element={<Contact />} />
-            <Route path='/manage' element={<Manage />} />
-            <Route path='/create' element={<Create />} />        
-            <Route path='/update/:id' element={<Update/>} />
-            <Route path="/craft/:id" element={<CraftDetail />} />      
+            <Route path='/home' element={<Home  user={userFullName} userRole={userRole} />} />
+            <Route path='/crafts' element={<Crafts userRole={userRole}/>} />
+            <Route path='/contact' element={<Contact userRole={userRole}/>} />
+            <Route path='/manage' element={<Manage userId={userId} userRole={userRole}/>} />
+            <Route path='/create' element={<Create  userId={userId}  userRole={userRole}/>} />        
+            <Route path='/update/:id' element={<Update userRole={userRole}/>} />
+            <Route path="/craft/:id" element={<CraftDetail userRole={userRole}/>} />      
+            <Route path="/users" element={<Users userId={userId} userRole={userRole}/>} />      
 
             {!isLoading && <Route path='/home' element={<Navigate to='/home' />} />}
           </>

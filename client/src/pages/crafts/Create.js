@@ -15,7 +15,7 @@ let emptyForm = {
     link: ''
 }
 
-function Create() {
+function Create({ userId, userRole }) {
 
     const [alert, setAlert] = useState(false);
     const [alertContent, setAlertContent] = useState('');
@@ -28,6 +28,7 @@ function Create() {
 
     async function handleSubmit(e) {
         e.preventDefault()
+        form.user = userId;
         const error = await createCraft(form)
 
         if (error.message !== undefined ) {
@@ -41,7 +42,7 @@ function Create() {
 
     return (
         <>
-            <Navbar></Navbar>
+            <Navbar userRole={userRole}></Navbar>
             <div className="wrapper create">
                 <div className="text-center mt-4 name create-heading">
                    New Craft

@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 
 
 
-function MyCrafts(){
+function MyCrafts({ userRole }){
     const [likeArr, setLikeArray] = useState(() => {
         // getting stored value
         const saved = localStorage.getItem("craft");
@@ -41,7 +41,7 @@ function MyCrafts(){
 
       return (
         <>
-            <Navbar />
+            <Navbar userRole={userRole}/>
             <section>
                 <div className="box">
                     {crafts.map(craft =>

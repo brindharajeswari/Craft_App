@@ -9,6 +9,7 @@ const craftSchema = new Schema({
     img: { type: String, required: true },
     link: { type: String, required: true },
     instruction:{type: String, required: true},
+    user: { type: String, required: true },
     comments: [{
         // an id referencing the comment
         type: mongoose.Types.ObjectId,

@@ -6,7 +6,7 @@ import './craft.css';
 import Navbar from '../../components/Nav';
 import { getAllCrafts } from '../../services/craftService';
 
-function Crafts() {
+function Crafts({userRole}) {
 
     const [crafts, setCraft] = useState([]);
 
@@ -29,7 +29,7 @@ function Crafts() {
 
     return (
         <>
-            <Navbar />
+            <Navbar userRole={userRole} />
             <section>
                 <div className="box">
                     {crafts.map(craft =>

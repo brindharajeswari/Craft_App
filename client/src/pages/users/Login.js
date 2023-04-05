@@ -62,7 +62,7 @@ function Login() {
             <button className="btn mt-3">Login</button>
         </form>
 
-        <div class="text-center fs-6 bottom-div">
+        <div className="text-center fs-6 bottom-div">
             <Link to="/register">
                 Sign up
             </Link>
