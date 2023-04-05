@@ -58,10 +58,13 @@ function Create() {
                         <textarea  onChange={handleChange}  autoComplete='off'  type="" name="description" id="description" placeholder="Craft description"/>
                     </div>
                     <div className=  "form-field d-flex align-items-center">
+                        <textarea  onChange={handleChange}  autoComplete='off'  type="" name="instruction" id="instruction" placeholder="Craft instructions"/>
+                    </div>
+                    <div className=  "form-field d-flex align-items-center">
                         <input  onChange={handleChange}   autoComplete='off'  type="text" name="img" id="img" placeholder="Craft image URL"/>
                     </div>
                     <div className=  "form-field d-flex align-items-center">
-                        <input  onChange={handleChange}  autoComplete='off'  type="text" name="link" id="link" placeholder="Craft Youtube URL"/>
+                        <input  onChange={handleChange}  autoComplete='off'  type="text" name="link" id="link" placeholder="Craft Youtube ID"/>
                     </div>
                     {alert ? <Alert  className='alert-bg' severity="error">{alertContent}</Alert> : <></> }
                     <button className="btn mt-3">Create</button>

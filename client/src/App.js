@@ -11,7 +11,6 @@ import Home from './pages/crafts/Home';
 import Contact from './pages/crafts/Contact';
 import Manage from './pages/crafts/Manage';
 import Crafts from './pages/crafts/Crafts';
-import Craft from './pages/crafts/Craft';
 import Create from './pages/crafts/Create';
 import Update from './pages/crafts/Update';
 import CraftDetail from './pages/crafts/CraftDetail';

@@ -22,13 +22,14 @@
 /* The card */
 .craft-card {
   position: relative;
-  height: 450px;
-  width: 900px;
-  margin: 200px auto;
+  height: 475px;
+  width: 932px;
+  margin: 103px auto;
   background-color: #FFF;
   -webkit-box-shadow: 10px 10px 93px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 10px 10px 93px 0px rgba(0, 0, 0, 0.75);
-  box-shadow: 10px 10px 93px 0px rgba(0, 0, 0, 0.75);
+  /* box-shadow: 10px 10px 93px 0px rgba(0, 0, 0, 0.75); */
+  box-shadow: 2px 3px 53px 0px rgba(0, 0, 0, 0.3);
 }
 
 /* Image on the left side */
@@ -36,7 +37,7 @@
   float: left;
   position: relative;
   left: 30px;
-  top: 21px;
+  top: 23px;
   width: 530px;
   -webkit-box-shadow: 10px 10px 60px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 10px 10px 60px 0px rgba(0, 0, 0, 0.75);
@@ -66,7 +67,8 @@
 .craft-card h1 {
   padding-top: 15px;
   font-size: 1.3rem;
-  color: #4B4B4B;
+  color: #7B7B7B;
+  font-weight: bold;
 }
 
 .craft-card .author {
@@ -86,11 +88,12 @@
 }
 
 .craft-card h2 {
-  padding-top: 8px;
-  margin-right: 6px;
-  text-align: right;
-  font-size: 0.8rem;
-}
+    padding-top: 6px;
+    margin-right: 6px;
+    text-align: center;
+    font-size: 0.8rem;
+}  
+
 .craft-card .separator {
   margin-top: 10px;
   border: 1px solid #C3C3C3;
@@ -110,7 +113,10 @@
   left: 30px;
   bottom: -120px;
   font-size: 6rem;
-  color: #C3C3C3;
+  color: #82c9f0;
+
+  font-weight: bold;
+  margin-bottom: revert;
 }
 
 .craft-card h6 {
@@ -118,19 +124,24 @@
   left: 30px;
   bottom: -55px;
   font-size: 2rem;
-  color: #C3C3C3;
+  color: #82c9f0;
+
+  font-weight: bold;
+  margin-bottom: revert;
+
 }
 
 /* Those futur buttons */
 .craft-card ul {
   margin-left: 250px;
+  margin-top: 49px;
 }
 
 .craft-card li {
   display: inline;
-  list-style: none;
   padding-right: 40px;
   color: #7B7B7B;
+  font-size: 0.9rem;
 }
 
 /* Floating action button */
@@ -140,7 +151,7 @@
   bottom: -40px;
   box-sizing: border-box;
   padding-top: 18px;
-  background-color: #1875D0;
+  background-color: rgb(5 185 255);
   width: 80px;
   height: 80px;
   color: white;
@@ -149,4 +160,37 @@
   -webkit-box-shadow: 10px 10px 50px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 10px 10px 50px 0px rgba(0, 0, 0, 0.75);
   box-shadow: 10px 10px 50px 0px rgba(0, 0, 0, 0.75);
+  
 }
+
+div.instructions {
+    height: 248px;
+    width: 364px;
+}
+
+div.instructions h2 {
+    padding-top: 0px;
+    margin-right: 0px;
+    text-align: inherit;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: rgb(5 185 255);
+
+}
+
+div.instructions ul {
+    margin-left: 0px;
+    margin-top: 0px;
+  }
+  
+  div.instructions li {
+    display: list-item;
+    padding-right: 40px;
+    color: #7B7B7B;
+  }
+
+
+  .icons-bottom li{
+    font-size: 1.1rem;
+  }
+  
