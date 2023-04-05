@@ -18,6 +18,7 @@ Project planning:
 -----------------
 Created a Entity- Relationship diagram - Structure for my craft app
 ![erd](./client/src/images/ERD.png)
+![erd](erd.png)
 
 I used Trello as a daily tracker to help organize my work flow
 https://trello.com/b/JOIyIjKW/to-dos
@@ -61,6 +62,7 @@ Future Enhancement:
 ------------------------------------------------------------------------------
 
 GitHub Link - https://github.com/brindharajeswari/craft_App
+
 render.com Link - https://craft-frontend-vk5m.onrender.com
 
 ------------------------------------------------------------------------------
