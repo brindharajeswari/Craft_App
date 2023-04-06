@@ -17,7 +17,7 @@ GitHub
 Project planning:
 -----------------
 Created a Entity- Relationship diagram - Structure for my craft app
-![erd](./client/src/images/erd.png)
+![erd](./client/src/images/erdiagram.png)
 
 I used Trello as a daily tracker to help organize my work flow
 https://trello.com/b/JOIyIjKW/to-dos
