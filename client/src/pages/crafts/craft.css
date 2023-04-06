@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Questrial");
 .box {
-  width: 900px;
+  width: 1080px;
   margin: 10% auto;
   position: relative;
   margin-top: 154px;
@@ -80,11 +80,12 @@ h1.craft {
 }
 
 p.craft {
-  font-size: 0.5em;
+  font-size: 0.7em;
+  font-weight: bolder;
 }
 
 .date {
-  color: #d0b2af;
+  color:#d0b2af;
 }
 
 footer {

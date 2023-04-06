@@ -37,6 +37,7 @@ function Update({ userRole }) {
         if (params.id) {
             getCraft(params.id).then(data => {
                 form[0] = data;
+
                 setCraft(data)
 
             })

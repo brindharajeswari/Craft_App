@@ -30,6 +30,7 @@ module.exports.delete = async (req, res) => {
 }
 
 module.exports.update = async (req, res) => {
+
     try {
         // add a third argument to the update { new: true } to return the new updated version of the document
         const updatedCraft = await Crafts.findByIdAndUpdate(req.params.id, req.body, { new: true })

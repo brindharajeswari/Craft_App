@@ -53,7 +53,7 @@ function Users({ userId, userRole }) {
                                     <td>{user.username}</td>
                                     <td>{user.email}</td>
                                     <td>
-                                    <Link  className='craft-edit' to={"/update/" + user._id}>Edit</Link> { user._id != userId ? <a href='' onClick={() => handleDeleteUser(user._id)} className='craft-edit'>| Delete</a> : '' }
+                                    <Link  className='craft-edit' to={"/updateuser/" + user._id}>Edit</Link> { user._id != userId ? <a href='' onClick={() => handleDeleteUser(user._id)} className='craft-edit'>| Delete</a> : '' }
                                     </td>
                                 </tr>
                     )}

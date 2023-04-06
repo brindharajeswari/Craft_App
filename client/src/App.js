@@ -15,6 +15,7 @@ import Create from './pages/crafts/Create';
 import Update from './pages/crafts/Update';
 import CraftDetail from './pages/crafts/CraftDetail';
 import Users from './pages/users/Users';
+import UpdateUser from './pages/users/Update';
 
 function App() {
   const [user, setUser] = useState({})
@@ -62,6 +63,7 @@ console.log(user)
             <Route path='/update/:id' element={<Update userRole={userRole}/>} />
             <Route path="/craft/:id" element={<CraftDetail userRole={userRole}/>} />      
             <Route path="/users" element={<Users userId={userId} userRole={userRole}/>} />      
+            <Route path='/updateuser/:id' element={<UpdateUser userRole={userRole}/>} />
 
             {!isLoading && <Route path='/home' element={<Navigate to='/home' />} />}
           </>

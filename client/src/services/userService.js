@@ -36,6 +36,17 @@ export async function userInfo() {
     }
 }
 
+export async function getUser(id) {
+    const axios = customAxiosWithAuth()
+    try {
+        const response = await axios.get(`/users/${id}`)
+        return response.data
+    } catch(err) {
+        console.log(err.message)
+    }
+}
+
+
 export async function getAllUsers() {
     const axios = customAxiosWithAuth()
     try {
@@ -57,10 +68,10 @@ export async function deleteUser(id) {
     }
 }
 
-export async function updateUser(id, craft) {
+export async function updateUser(id, user) {
     const axios = customAxiosWithAuth()
     try {
-        await axios.put(`/user/${id}`, craft)
+        await axios.put(`/users/${id}`, user)
     } catch(err) {
         console.log(err.message)
         return err

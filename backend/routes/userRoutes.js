@@ -13,6 +13,7 @@ router.put('/:id', authorize, userCtrl.update)
 
 // index
 router.get('/all', userCtrl.index)
+router.get('/:id', userCtrl.get)
 
 
 module.exports = router
